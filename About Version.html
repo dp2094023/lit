@@ -1,0 +1,143 @@
+<!doctype html>
+
+<!--
+about:version template page
+-->
+
+<html id="t" dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <title>About Version</title>
+    <base href="chrome://version">
+
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="chrome://theme/current-channel-logo">
+
+    <link rel="stylesheet" href="chrome://resources/css/text_defaults.css">
+
+    <link rel="stylesheet" href="chrome://version/about_version.css">
+
+
+    <script type ="module" src="about_version.js"></script>
+  </head>
+
+  <body>
+    <div id="outer">
+      <div id="logo">
+
+        <!-- Version for themes. -->
+        <picture>
+          <source srcset="chrome://theme/IDR_PRODUCT_LOGO_WHITE,
+                          chrome://theme/IDR_PRODUCT_LOGO_WHITE@2x 2x"
+                  media="(prefers-color-scheme: dark)">
+          <source srcset="chrome://theme/IDR_PRODUCT_LOGO,
+                          chrome://theme/IDR_PRODUCT_LOGO@2x 2x"
+                  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+          <img alt="Chrome logo" src="chrome://theme/IDR_PRODUCT_LOGO">
+        </picture>
+
+
+        <div id="company">Google LLC</div>
+        <div id="copyright">Copyright 2025 Google LLC. All rights reserved.</div>
+      </div>
+      <table id="inner" cellpadding="0" cellspacing="0" border="0">
+        <tr><td class="label">Google Chrome</td>
+          <td class="version" id="version">
+            <span id="copy-content">
+              <span>137.0.7151.123</span>
+              (<span>Official Build</span>)
+              <span></span>
+              <span>(64-bit)</span>
+  
+            </span>
+            <button id="copy-to-clipboard" aria-label="Copy version string">
+              <div id="copy-to-clipboard-icon"></div>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Revision</td>
+          <td class="version">
+            <span>65288e26d8d1491aacdf8f5c950830dd4332198d-refs/branch-heads/7151@{#2365}</span>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td class="label">Platform</td>
+          <td class="version" id="platform_type">
+            <span id="platform_version"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Firmware Version</td>
+          <td class="version">
+            <span id="firmware_version"></span>
+          </td>
+        </tr>
+        <tr id="customization_id_holder" hidden>
+          <td class="label">Customization ID</td>
+          <td class="version">
+            <span id="customization_id"></span>
+          </td>
+        </tr>
+        <tr id="arc_holder"><td class="label">ARC</td>
+          <td class="version">
+            <span id="arc_and_arc_android_sdk_versions"></span>
+          </td>
+        </tr>
+
+
+        <tr><td class="label">JavaScript</td>
+          <td class="version" id="js_engine">
+            <span>V8</span>
+            <span>13.7.152.17</span>
+          </td>
+        </tr>
+
+        <tr><td class="label">User Agent</td>
+          <td class="version" id="useragent">Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36</td>
+        </tr>
+        <tr><td class="label">Command Line</td>
+          <td class="version" id="command_line"> /opt/google/chrome/chrome --gpu-sandbox-failures-fatal=yes --disable-mojo-broker --enable-logging --enable-native-gpu-memory-buffers --gpu-sandbox-start-early --use-cras --user-data-dir=/home/chronos --video-capture-use-gpu-memory-buffer --enable-webgl-image-chromium --enable-wayland-server --default-wallpaper-large=/usr/share/chromeos-assets/wallpaper/default_large.jpg --default-wallpaper-small=/usr/share/chromeos-assets/wallpaper/default_small.jpg --guest-wallpaper-large=/usr/share/chromeos-assets/wallpaper/guest_large.jpg --guest-wallpaper-small=/usr/share/chromeos-assets/wallpaper/guest_small.jpg --arc-availability=officially-supported --form-factor=CLAMSHELL --has-chromeos-keyboard --login-profile=user --bwsi --homepage=chrome://newtab/ --incognito --log-level=1 --login-user=$guest --login-user=$guest --login-profile=77dd8e3a9f9d283f9b5ed9419510cf105edabad2 --flag-switches-begin --flag-switches-end --disable-sync --disable-extensions</td>
+        </tr>
+
+        <tr><td class="label">Executable Path</td>
+          <td class="version" id="executable_path"></td>
+        </tr>
+        <tr><td class="label">Profile Path</td>
+          <td class="version" id="profile_path"></td>
+        </tr>
+
+
+        <tr id="variations-seed-section" hidden>
+          <td class="label">Variations Seed Type</td>
+          <td class="version" id="variations-seed"></td>
+        </tr>
+        <tr id="variations-cmd-section">
+          <td class="label">Command-line Variations</td>
+          <td class="version-wide" id="variations-cmd"></td>
+          <td>
+            <button id="copy-variations-to-clipboard"
+                aria-label="Copy variations string">
+              <div id="copy-to-clipboard-icon"></div>
+            </button>
+          </td>
+        </tr>
+        <tr id="variations-section">
+          <td class="label">Active Variations</td>
+          <td class="version" id="variations-list"></td>
+        </tr>
+        <tr id="sanitizer-section" hidden>
+          <td class="label">Sanitizer</td>
+          <td class="version" id="sanitizer"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="messages" role="alert" aria-live="polite" aria-relevant="additions">
+    </div>
+  </body>
+</html>
